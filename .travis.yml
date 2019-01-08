@@ -1,4 +1,26 @@
 osx_image: xcode10.1
 language: objective-c
+env:
+  global:
+  - FRAMEWORK_NAME=PagingKit
+cache:
+  directories:
+  - Carthage
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_deploy:
+- carthage build --no-skip-current --platform iOS --cache-builds
+- carthage archive $FRAMEWORK_NAME
 script:
-- set -o pipefail && xcodebuild test -scheme PagingKit -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.1' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild test -scheme PagingKit -destination 'platform=iOS
+  Simulator,name=iPhone XS Max,OS=12.1' ONLY_ACTIVE_ARCH=YES | xcpretty
+deploy:
+  provider: releases
+  api_key:
+    secure: BpIrWEerUQVLVu7UxU8VnvJ37xkiVJOFTmXDEmuNgTLOTyhVVMk65syR8Abn7Hcsp1wNQaMKCrZ1l1JN8MamIa07BAeLmObX0CTNMyQtclcH2u+QdD+WfOcPAi/liluMiGw3AI+ZeFVH1pUmaAfGumcUhtxACxoQPT8KpgnRfZO9WbbJDxfMzcwoOoqQxfclrTXFVikjvsEulP7kKY4seM+6/CUBRubW9+9/Aa1zeqYmn4czqkFDss2i7wu4LwELtWd81T0l0ZAsIq+FZF4LOMO1V84O8Ee9roARM80rzLXCIIcUYBBGnh14fc60j804dbCkWj2of00bKxHnMvzrXLm0PweaZ834qqeTXXa1DvO7hF8xn3c4u5N6Cpo/gnlEgOglYI7QFv0SVJTFPrC0c4uOD8hDvWAr9mXZ6oC69AQNrUN2itpPKGumyTBH2rqKQJLDg+H9PcSCApZojh7ZEFKvPLWyhjGj1QkxavxJYeIEASbgnLdUzGdEfjhmMgUNZVAUPQviqhMXyW0JCZmLujC85AuB6phegR9strU1yLZWymlcnVUwzXE4FcbU5DeSCsFWPNLbDadE+y+GLhwmm+GgVIRYzxONLIxDL9WJVsdEH61AJGXzRl9YX5rxNrIEldK/E1x/h21ceVhu64D/3nGSvt0gIH98XymYuXea+BI=
+  file: "$FRAMEWORK_NAME.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: olejnjak/PagingKit
+    tags: true
