@@ -32,9 +32,3 @@ public struct Page<PagingType: Paging, ItemType> {
         return combine(prevItems: lhs, new: rhs)
     }
 }
-
-extension Optional {
-    public static func+<PagingType, ItemType>(lhs: [ItemType], rhs: Page<PagingType, ItemType>?) -> [ItemType] {
-        return Page<PagingType, ItemType>.combine(prevItems: lhs, new: rhs)
-    }
-}
