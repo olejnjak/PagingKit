@@ -15,6 +15,6 @@ public struct URLPaging: Paging {
     
     public init(previous: URL?, next: URL?) {
         self.previous = previous
-        self.next = previous
+        self.next = next
     }
 }

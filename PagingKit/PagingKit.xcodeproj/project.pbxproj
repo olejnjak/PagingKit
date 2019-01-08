@@ -14,6 +14,7 @@
 		6907552721E4E143009400FB /* LimitOffsetPaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907552621E4E143009400FB /* LimitOffsetPaging.swift */; };
 		6907552921E4E611009400FB /* URLPaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907552821E4E611009400FB /* URLPaging.swift */; };
 		6907552B21E4E8E9009400FB /* LimitOffsetPagingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907552A21E4E8E9009400FB /* LimitOffsetPagingTests.swift */; };
+		6907552D21E4ECED009400FB /* URLPagingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907552C21E4ECED009400FB /* URLPagingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		6907552621E4E143009400FB /* LimitOffsetPaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitOffsetPaging.swift; sourceTree = "<group>"; };
 		6907552821E4E611009400FB /* URLPaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPaging.swift; sourceTree = "<group>"; };
 		6907552A21E4E8E9009400FB /* LimitOffsetPagingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitOffsetPagingTests.swift; sourceTree = "<group>"; };
+		6907552C21E4ECED009400FB /* URLPagingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPagingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +93,9 @@
 		6907551521E4DFE8009400FB /* PagingKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				6907552121E4E007009400FB /* Supporting files */,
 				6907552A21E4E8E9009400FB /* LimitOffsetPagingTests.swift */,
+				6907552C21E4ECED009400FB /* URLPagingTests.swift */,
+				6907552121E4E007009400FB /* Supporting files */,
 			);
 			path = PagingKitTests;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6907552B21E4E8E9009400FB /* LimitOffsetPagingTests.swift in Sources */,
+				6907552D21E4ECED009400FB /* URLPagingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
