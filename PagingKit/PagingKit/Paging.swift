@@ -8,8 +8,10 @@
 import Foundation
 
 public protocol Paging {
-    var previous: Self? { get }
-    var next: Self? { get }
+    associatedtype PageType
+    
+    var previous: PageType? { get }
+    var next: PageType? { get }
 }
 
 public extension Paging {
