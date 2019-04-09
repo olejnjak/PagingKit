@@ -15,7 +15,7 @@ public protocol Paging {
 }
 
 public extension Paging {
-    public var isFirst: Bool {
+    var isFirst: Bool {
         return previous == nil
     }
 }
