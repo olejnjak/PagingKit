@@ -20,7 +20,7 @@ public struct Page<PagingType: Paging, ItemType> {
     
     // MARK: - Static helpers
     
-    public static func combine<PagingType: Paging, Result>(prevItems: [Result], new: Page<PagingType, Result>?) -> [Result] {
+    public static func combine<PT: Paging, Result>(prevItems: [Result], new: Page<PT, Result>?) -> [Result] {
         if let new = new, new.paging.isFirst {
             return new.items
         } else {
